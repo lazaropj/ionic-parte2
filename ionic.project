@@ -1,4 +1,11 @@
 {
   "name": "AluraCar",
-  "app_id": "e452ad3e"
+  "app_id": "e452ad3e",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

@@ -113,7 +113,7 @@ angular.module('starter').controller('FinalizarPedidoedidoController', function(
 				title: 'Parabens!',
 				template: 'Você acaba de comprar um carro.'
 			}).then(function(){
-				$state.go('listagem');
+				$state.go('app.listagem');
 			});
 		});
 
