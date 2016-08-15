@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+
+
+.bar .header-item {
+	color: whitesmoke;
+}
+
+.footer {
+	background: #1BB1D0;
+}
+
+.footer .title{
+	color: whitesmoke;
+}

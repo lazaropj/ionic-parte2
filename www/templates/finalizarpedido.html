@@ -1,0 +1,32 @@
+
+<ion-view>
+	<ion-nav-title>Estamos quase lá</ion-nav-title>
+	<ion-content>
+		<div class="card">
+		  <div class="item item-divider">
+		    <h2>{{carroFinal.nome}}</h2>
+		    <h3>R{{carroFinal.preco | currency}}</h3>
+		  </div>
+
+		  <div class="item item-body">
+		  	<div class="list">
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Nome Completo</span>
+			    <input type="text" ng-model="pedido.nome">
+			  </label>
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Endereço</span>
+			    <input type="text" ng-model="pedido.endereco">
+			  </label>
+			  <label class="item item-input item-stacked-label">
+			    <span class="input-label">Email</span>
+			    <input type="text" ng-model="pedido.email">
+			  </label>
+			</div>
+			<button class="button button-positive button-full" ng-click="finalizarPedido()">
+				Realizar o sonho de trocar de carro.
+			</button>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>
