@@ -10,7 +10,7 @@ angular.module('starter')
 
 });
 
-angular.module('starter').controller('MenuController', function($rootScope, $scope){
+angular.module('starter').controller('MenuController', function($rootScope, $scope, $cordovaCamera){
 
 
 	$scope.usuarioLogado = $rootScope.usuario;
@@ -29,20 +29,65 @@ angular.module('starter').controller('MenuController', function($rootScope, $sco
 		}
 	}
 
+	$scope.takeImage = function() {
+        var options = {
+            quality: 80,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: Camera.PictureSourceType.CAMERA,
+            allowEdit: true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 250,
+            targetHeight: 250,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.srcImage = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            // error
+        });
+    }
+
 });
 
-angular.module('starter').controller('LoginController', function($scope, CarroService, $state,  $ionicPopup, $rootScope){
+angular.module('starter').controller('LoginController', function($scope, CarroService, $state,  $ionicPopup, $rootScope, DataBaseValues){
 
 	$scope.login = {};
 
-
+	DataBaseValues.bancoDeDados.transaction(function(tx){
+			tx.executeSql(
+				"INSERT INTO compra (nome, endereco, email) VALUES (?,?, ?)",['Lazaro', 'la mesmo', 'lazaro@gmail.com']);
+			});
 
 	$scope.realizarLogin = function(){
 
+		/*
 		var dadosDoLogin = {
 			params: {
 				email: $scope.login.email,
 				senha: $scope.login.senha
+			}
+		};
+
+
+		CarroService.realizarLogin(dadosDoLogin).then(function(dados){
+			if(dados.status === 200){
+					$rootScope.usuario = dados.data.usuario;
+					$state.go('app.listagem', dados);
+			}else{
+				$ionicPopup.alert({
+					title: 'Opa!',
+					template: 'Email ou senha incorreta'
+				});
+			}
+
+		});*/
+
+		var dadosDoLogin = {
+			params: {
+				email: 'joao@alura.com.br',
+				senha: 'alura123'
 			}
 		};
 

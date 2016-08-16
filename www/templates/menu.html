@@ -20,9 +20,9 @@
       <div class="list card">
 
         <div class="item item-avatar">
-          <img src="perfil.jpg">
+          <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" style="display: block; margin: 0 auto;"/><br/>
           <h2>{{usuarioLogado.nome}}</h2>
-          <p>{{usuarioLogado.dataNascimento}}</p>
+          <button ng-show="isEdit" class="button button-full button-positive " ng-click="takeImage() ">Tirar foto</button><br/>
         </div>
 
         <div class="item item-body" >
