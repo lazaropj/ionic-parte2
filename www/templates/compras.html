@@ -1,0 +1,14 @@
+<ion-view cache-view="false" view-title="Compras Realizadas">
+	<ion-content>
+		<ion-list>
+	    	<ion-item ng-repeat="compra in compras">
+						<div ng-class="{ 'falha': compra.isConfirmado == 'false' }">
+							{{compra.nome}} - R{{compra.preco | currency}}
+						</div>
+						<ion-option-button class="button-positive"
+							ng-hide="compra.isConfirmado == 'true'"
+							ng-click="reenviarCompra(compra)">Reenviar</ion-option-button>
+	    	</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

@@ -22,6 +22,13 @@
 			    <span class="input-label">Email</span>
 			    <input type="text" ng-model="pedido.email">
 			  </label>
+				<label class="item item-input item-stacked-label">
+			    <span class="input-label">Data Entrega</span>
+					<button class="button button-positive button-block" style="margin: 0;"
+              ng-click="abrirPopupCalendario()">Escolha a data
+		      </button>
+		      <div class="padding-top" ng-if="dataEscolhida">{{dataEscolhida | date: 'dd/MM/yyyy'}}</div>
+			  </label>
 			</div>
 			<button class="button button-positive button-full" ng-click="finalizarPedido()">
 				Realizar o sonho de trocar de carro.

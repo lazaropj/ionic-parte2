@@ -21,7 +21,7 @@
 
         <div class="item item-avatar">
           <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" style="display: block; margin: 0 auto;"/><br/>
-          <h2>{{usuarioLogado.nome}}</h2>
+          <h2>{{::usuarioLogado.nome}}</h2>
           <button ng-show="isEdit" class="button button-full button-positive " ng-click="takeImage() ">Tirar foto</button><br/>
         </div>
 
@@ -53,8 +53,16 @@
             ng-click="acaoBotao(isEdit)">{{textoBtn}}</button>
           </div>
         </div>
-
+        <ion-list>
+          <ion-item menu-close href="#/app/compras">
+            Compras Realizadas
+          </ion-item>
+          <ion-item menu-close href="#/app/listagem">
+            Listagem
+          </ion-item>
+        </ion-list>
       </div>
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

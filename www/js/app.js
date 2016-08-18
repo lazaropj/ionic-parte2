@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ui.utils.masks', 'ngCordova'])
+angular.module('starter', ['ionic', 'ui.utils.masks', 'ngCordova', 'ionic-datepicker'])
 
 .run(function($ionicPlatform, DataBaseValues) {
   $ionicPlatform.ready(function() {
@@ -25,7 +25,8 @@ angular.module('starter', ['ionic', 'ui.utils.masks', 'ngCordova'])
     DataBaseValues.setup();
     DataBaseValues.bancoDeDados.transaction(function(tx){
         tx.executeSql(
-          "CREATE TABLE IF NOT EXISTS compra (nome VARCHAR(300), endereco VARCHAR(300), email VARCHAR(300));",[]);
+          "CREATE TABLE IF NOT EXISTS compra (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,nome VARCHAR(300), endereco VARCHAR(300), email VARCHAR(300)," +
+         "dataEntrega VARCHAR(40), carro VARCHAR(100), preco VARCHAR(50), isConfirmado BOOLEAN);",[]);
       });
 
   });

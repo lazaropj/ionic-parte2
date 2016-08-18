@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "angular-ui-utils": "^3.0.0",
-    "angular-input-masks": "^2.4.0"
+    "angular-input-masks": "^2.4.0",
+    "ionic-datepicker": "^1.2.0"
   }
 }

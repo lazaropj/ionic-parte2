@@ -39,6 +39,16 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider) {
       }
   })
 
+  .state('app.compras', {
+    url: '/compras',
+    views: {
+        'menuContent' :{
+          templateUrl: "templates/compras.html",
+          controller: 'CompraController'
+        }
+      }
+  })
+
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
