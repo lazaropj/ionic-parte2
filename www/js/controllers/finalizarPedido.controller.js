@@ -40,7 +40,7 @@ angular.module('starter').controller('FinalizarPedidoedidoController', function(
 
 			$ionicPopup.alert({
 				title: 'Parabens!',
-				template: 'Você acaba de comprar um carro.'
+				template: 'Você acaba de agendar seu Test Drive.'
 			}).then(function(){
 				$state.go('app.listagem');
 			});
@@ -55,7 +55,7 @@ angular.module('starter').controller('FinalizarPedidoedidoController', function(
 
 			$ionicPopup.alert({
 				title: 'Ops',
-				template: 'Estamos com problemas no servidor. Tente enviar sua compra novamente pela tela de compras realizadas'
+				template: 'Estamos com problemas no servidor. Tente enviar seu agendamento novamente pela tela de Agendamentos Realizados'
 			}).then(function(){
 				$state.go('app.compras');
 			});

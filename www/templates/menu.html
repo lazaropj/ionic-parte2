@@ -21,30 +21,25 @@
 
         <div class="item item-avatar">
           <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" style="display: block; margin: 0 auto;"/><br/>
-          <h2>{{::usuarioLogado.nome}}</h2>
+          <h2>{{usuarioLogado.nome}}</h2>
           <button ng-show="isEdit" class="button button-full button-positive " ng-click="takeImage() ">Tirar foto</button><br/>
         </div>
 
         <div class="item item-body" >
           <div class="list">
             <label class="item item-input">
-              <span class="input-label">Nome</span>
-              <input type="text" ng-value="usuarioLogado.nome"
-                      ng-model="usuarioLogado.nome" ng-disabled="!isEdit">
-            </label>
-            <label class="item item-input">
-              <span class="input-label">Dt. Nasc.</span>
-              <input type="text" ng-value="usuarioLogado.dataNascimento"
+              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.dataNascimento}}</span>
+              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.dataNascimento"
                       ng-model="usuarioLogado.dataNascimento" ng-disabled="!isEdit">
             </label>
             <label class="item item-input">
-              <span class="input-label">Telefone</span>
-              <input type="text" ng-value="usuarioLogado.telefone" ui-br-phone-number
+              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.telefone}}</span>
+              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.telefone" ui-br-phone-number
                       ng-model="usuarioLogado.telefone" ng-disabled="!isEdit">
             </label>
             <label class="item item-input">
-              <span class="input-label">E-mail</span>
-              <input type="text" ng-value="usuarioLogado.email"
+              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.email}}</span>
+              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.email"
                       ng-model="usuarioLogado.email" ng-disabled="!isEdit">
             </label>
           </div>
@@ -55,10 +50,10 @@
         </div>
         <ion-list>
           <ion-item menu-close href="#/app/compras">
-            Compras Realizadas
+            Agendamentos
           </ion-item>
           <ion-item menu-close href="#/app/listagem">
-            Listagem
+            Lista de Carros
           </ion-item>
         </ion-list>
       </div>

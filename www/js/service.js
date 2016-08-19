@@ -1,8 +1,8 @@
 angular.module('starter')
 .service('CarroService', function($http){
 
-	//var url = 'https://aluracar.herokuapp.com';
-	var url = 'http://localhost:8080';
+	var url = 'https://aluracar.herokuapp.com';
+	//var url = 'http://localhost:8080';
 
 	return {
 		obterCarros : function(){
