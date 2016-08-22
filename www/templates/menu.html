@@ -1,7 +1,7 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar bar-positive">
-      <ion-nav-back-button>
+      <ion-nav-back-button >Voltar
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
@@ -29,26 +29,19 @@
           <div class="list">
             <label class="item item-input">
               <span ng-show="!isEdit" class="input-label">{{usuarioLogado.dataNascimento}}</span>
-              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.dataNascimento"
-                      ng-model="usuarioLogado.dataNascimento" ng-disabled="!isEdit">
             </label>
             <label class="item item-input">
-              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.telefone}}</span>
-              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.telefone" ui-br-phone-number
-                      ng-model="usuarioLogado.telefone" ng-disabled="!isEdit">
+              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.telefone | brPhoneNumber}}</span>
             </label>
             <label class="item item-input">
               <span ng-show="!isEdit" class="input-label">{{usuarioLogado.email}}</span>
-              <input ng-show="isEdit" type="text" ng-value="usuarioLogado.email"
-                      ng-model="usuarioLogado.email" ng-disabled="!isEdit">
             </label>
-          </div>
-          <div class="item item-divider">
-            <button type="button" class="button button-full button-positive"
-            ng-click="acaoBotao(isEdit)">{{textoBtn}}</button>
           </div>
         </div>
         <ion-list>
+          <ion-item menu-close href="#/app/editarperfil">
+            Editar Perfil
+          </ion-item>
           <ion-item menu-close href="#/app/compras">
             Agendamentos
           </ion-item>

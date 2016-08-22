@@ -49,6 +49,16 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider) {
       }
   })
 
+  .state('app.editarperfil', {
+    url: '/editarperfil',
+    views: {
+        'menuContent' :{
+          templateUrl: "templates/editarperfil.html",
+          controller: 'EditarPerfilController'
+        }
+      }
+  })
+
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',

@@ -1,0 +1,34 @@
+<ion-view cache-view="false" view-title="Editar Perfil">
+	<ion-content>
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" style="display: block; margin: 0 auto;"/><br/>
+        <h2>{{usuarioLogado.nome}}</h2>
+        <button ng-show="isEdit" class="button button-full button-positive " ng-click="takeImage() ">Tirar foto</button><br/>
+      </div>
+      <div class="item item-body" >
+        <div class="list">
+          <label class="item item-input">
+            <span ng-show="!isEdit" class="input-label">{{usuarioLogado.dataNascimento}}</span>
+            <input ng-show="isEdit" type="text" ng-value="usuarioLogado.dataNascimento"
+                    ng-model="usuarioLogado.dataNascimento" ng-disabled="!isEdit">
+          </label>
+          <label class="item item-input">
+            <span ng-show="!isEdit" class="input-label">{{usuarioLogado.telefone | brPhoneNumber}}</span>
+            <input ng-show="isEdit" type="text" ng-value="usuarioLogado.telefone" ui-br-phone-number
+                    ng-model="usuarioLogado.telefone" ng-disabled="!isEdit">
+          </label>
+          <label class="item item-input">
+            <span ng-show="!isEdit" class="input-label">{{usuarioLogado.email}}</span>
+            <input ng-show="isEdit" type="text" ng-value="usuarioLogado.email"
+                    ng-model="usuarioLogado.email" ng-disabled="!isEdit">
+          </label>
+        </div>
+        <div class="item item-divider">
+          <button type="button" class="button button-full button-positive"
+          ng-click="acaoBotao(isEdit)">{{textoBtn}}</button>
+        </div>
+      </div>
+	</ion-content>
+</ion-view>

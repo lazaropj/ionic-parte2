@@ -4,7 +4,7 @@ angular.module('starter').controller('LoginController', function($scope, CarroSe
 
 	$scope.realizarLogin = function(){
 
-		/*
+
 		var dadosDoLogin = {
 			params: {
 				email: $scope.login.email,
@@ -24,8 +24,8 @@ angular.module('starter').controller('LoginController', function($scope, CarroSe
 				});
 			}
 
-		});*/
-
+		});
+		/*
 		var dadosDoLogin = {
 			params: {
 				email: 'joao@alura.com.br',
@@ -45,6 +45,7 @@ angular.module('starter').controller('LoginController', function($scope, CarroSe
 			}
 
 		});
+		*/
 
 
 	}

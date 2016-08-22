@@ -10,7 +10,6 @@ angular.module('starter')
     	tx.executeSql("SELECT * FROM compra", [], function(tx, results) {
         if(results.rows.length > 0) {
             for(var i = 0; i < results.rows.length; i++) {
-                console.log("Result -> " + results.rows.item(i).nome + " " + results.rows.item(i).email);
 								$scope.compras.push(results.rows.item(i));
             }
         }
