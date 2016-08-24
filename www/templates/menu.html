@@ -20,35 +20,25 @@
       <div class="list card">
 
         <div class="item item-avatar">
-          <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" style="display: block; margin: 0 auto;"/><br/>
+          <img ng-src="{{srcImage || 'perfil.jpg'}}" id="srcImage" /><br/>
           <h2>{{usuarioLogado.nome}}</h2>
-          <button ng-show="isEdit" class="button button-full button-positive " ng-click="takeImage() ">Tirar foto</button><br/>
+          <h3>{{usuarioLogado.email}}</h3>
+
         </div>
 
         <div class="item item-body" >
-          <div class="list">
-            <label class="item item-input">
-              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.dataNascimento}}</span>
-            </label>
-            <label class="item item-input">
-              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.telefone | brPhoneNumber}}</span>
-            </label>
-            <label class="item item-input">
-              <span ng-show="!isEdit" class="input-label">{{usuarioLogado.email}}</span>
-            </label>
-          </div>
+          <ion-list>
+            <ion-item menu-close href="#/app/editarperfil">
+              Editar Perfil
+            </ion-item>
+            <ion-item menu-close href="#/app/compras">
+              Agendamentos
+            </ion-item>
+            <ion-item menu-close href="#/app/listagem">
+              Lista de Carros
+            </ion-item>
+          </ion-list>
         </div>
-        <ion-list>
-          <ion-item menu-close href="#/app/editarperfil">
-            Editar Perfil
-          </ion-item>
-          <ion-item menu-close href="#/app/compras">
-            Agendamentos
-          </ion-item>
-          <ion-item menu-close href="#/app/listagem">
-            Lista de Carros
-          </ion-item>
-        </ion-list>
       </div>
 
     </ion-content>
